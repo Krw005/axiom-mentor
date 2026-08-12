@@ -8,11 +8,11 @@ answers, and answers rarely change behavior. AXIOM is built to ask instead — t
 surface the question behind the question, name the tension a person is avoiding,
 and end every exchange with something that moves the feet.
 
-> **[ADD A SCREENSHOT HERE]** — one image of the interface mid-conversation does
-> more than three paragraphs of description. `![AXIOM](docs/screenshot.png)`
+> <img width="603" height="1311" alt="IMG_0065" src="https://github.com/user-attachments/assets/465e40f5-4306-4be1-89b9-8ef047d8f7cd" /> <img width="603" height="1311" alt="IMG_0067" src="https://github.com/user-attachments/assets/35c33c1f-9520-4381-941b-c9c4c319ebe5" />
 
-> **[ADD A LIVE DEMO LINK HERE]** — deploy the front end to Vercel or Netlify and
-> put the URL at the top. Reviewers will click a link; most will not clone a repo.
+
+
+> 
 
 ---
 
@@ -119,4 +119,8 @@ over a long conversation.
 
 ## Author
 
-Kevin Williams — [linkedin.com/in/[HANDLE]](https://linkedin.com/in/[HANDLE])
+Kevin Williams — [www.linkedin.com/in/kevin-williams-915736188
+
+](https://www.linkedin.com/in/kevin-williams-915736188
+
+)
