@@ -119,8 +119,6 @@ over a long conversation.
 
 ## Author
 
-Kevin Williams — [www.linkedin.com/in/kevin-williams-915736188
-
-](https://www.linkedin.com/in/kevin-williams-915736188
+Kevin Williams — [LinkedIn](https://www.linkedin.com/in/kevin-williams-915736188
 
 )
