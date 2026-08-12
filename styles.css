@@ -1,0 +1,299 @@
+/*
+  Palette drawn from the subject: limestone ground, basalt ink, and lapis —
+  the pigment Egyptian workshops valued above all others — as the single accent.
+  Ochre appears only as a hairline, never as fill.
+*/
+
+:root {
+  --limestone: #e9e5da;
+  --limestone-deep: #ddd8c9;
+  --basalt: #16181b;
+  --basalt-soft: #4a4d4f;
+  --muted: #6d6b62;
+  --lapis: #22437e;
+  --ochre: #b07c2e;
+
+  --display: 'Fraunces', Georgia, serif;
+  --body: 'Karla', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--limestone);
+  color: var(--basalt);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.shell {
+  max-width: 720px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 0 18px;
+  border-bottom: 1px solid var(--ochre);
+}
+
+.mark {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border: 1.5px solid var(--lapis);
+  transform: rotate(45deg);
+  position: relative;
+}
+
+.mark::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  background: var(--lapis);
+}
+
+.masthead h1 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 27px;
+  letter-spacing: 0.14em;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.epigraph {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 3px 0 0;
+}
+
+/* ---------- thread ---------- */
+
+.thread {
+  flex: 1;
+  overflow-y: auto;
+  padding: 26px 0;
+}
+
+.opening-lead {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.4;
+  margin: 6px 0 26px;
+  max-width: 30ch;
+}
+
+.openers {
+  display: grid;
+  gap: 10px;
+}
+
+.opener {
+  text-align: left;
+  background: transparent;
+  border: 1px solid var(--limestone-deep);
+  border-left: 2px solid var(--lapis);
+  padding: 13px 15px;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.opener:hover {
+  background: var(--limestone-deep);
+}
+
+.opener:focus-visible {
+  outline: 2px solid var(--lapis);
+  outline-offset: 2px;
+}
+
+.opener-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--lapis);
+  margin-bottom: 5px;
+}
+
+.opener-text {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ---------- turns ---------- */
+
+.turn {
+  margin-bottom: 26px;
+}
+
+.speaker {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+
+.turn--assistant .speaker {
+  color: var(--lapis);
+}
+
+.turn .body p {
+  margin: 0 0 12px;
+}
+
+.turn--assistant .body {
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.62;
+  border-left: 2px solid var(--lapis);
+  padding-left: 17px;
+}
+
+.turn--user .body {
+  color: var(--muted);
+  padding-left: 19px;
+}
+
+/* ---------- pending ---------- */
+
+.thinking {
+  display: flex;
+  gap: 5px;
+  padding-left: 17px;
+  border-left: 2px solid var(--lapis);
+}
+
+.thinking span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--lapis);
+  opacity: 0.3;
+  animation: pulse 1.3s ease-in-out infinite;
+}
+
+.thinking span:nth-child(2) {
+  animation-delay: 0.18s;
+}
+.thinking span:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thinking span {
+    animation: none;
+    opacity: 0.55;
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+.error {
+  font-size: 14px;
+  color: #8c2f2f;
+  border-left: 2px solid #8c2f2f;
+  padding-left: 15px;
+}
+
+/* ---------- composer ---------- */
+
+.composer {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  padding: 14px 0 24px;
+  border-top: 1px solid var(--limestone-deep);
+}
+
+.composer textarea {
+  flex: 1;
+  resize: none;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 11px 13px;
+  border: 1px solid var(--limestone-deep);
+  background: transparent;
+  color: inherit;
+}
+
+.composer textarea:focus {
+  outline: none;
+  border-color: var(--lapis);
+}
+
+.composer button {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 13px 19px;
+  background: var(--lapis);
+  color: var(--limestone);
+  border: none;
+  cursor: pointer;
+}
+
+.composer button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.composer button:focus-visible {
+  outline: 2px solid var(--basalt);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .opening-lead {
+    font-size: 19px;
+  }
+  .turn--assistant .body {
+    font-size: 16px;
+  }
+}
